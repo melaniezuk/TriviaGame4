@@ -1,21 +1,84 @@
-//once the "start" button from the first page is clicked, it goes to the second screen
+$(document).ready(function(){
+    console.log("document is loaded")
 
-//there is a counter or timer that is counting down from 120 seconds after "start" is clicked.
+    $("#submit").click(function(){
+       
+        var correctTally = 0;
+        var incorrectTally = 0;
+        
+        $("input[name='q1']:checked").each(function(){
+            if($(this).data("answer")){
+                correctTally++
+            }else{
+                incorrectTally++
+            }
+        });
 
-//on the second screen, the user picks one answer for each of the 8 questions
+        console.log('this is the correct tally: ' + correctTally);
+        console.log('this is th incorrect tally: ' + incorrectTally);
+   
+        $("input[name='q2']:checked").each(function(){
+            if($(this).data("answer")){
+                correctTally++;
+            }else{
+                incorrectTally++;
+            }
+        });
+        
+        $("input[name='q3']:checked").each(function(){
+            if($(this).data("answer")){
+                correctTally++;
+            }else{
+                incorrectTally++; 
+            }
+        });
+   
+        $("input[name='q4']:checked").each(function(){
+            if($(this).data("answer")){
+                correctTally++;
+            }else{
+                incorrectTally++;
+            }
+        });
 
-//the counter counts down from 120 to zero while the user plays the game.
+        $("input[name='q5']:checked").each(function(){
+            if($(this).data("answer")){
+                correctTally++;
+            }else{
+                incorrectTally++;
+            }
+        });
 
-//Answers are shown once the time is up or the "done" button is pushed.
+        $("input[name='q6']:checked").each(function(){
+            if($(this).data("answer")){
+                correctTally++;
+            }else{
+                incorrectTally++;
+            }
+        });
 
+        $("input[name='q7']:checked").each(function(){
+            if($(this).data("answer")){
+                correctTally++;
+            }else{
+                incorrectTally++;
+            }
+        });
 
+        $("input[name='q8']:checked").each(function(){
+            if($(this).data("answer")){
+                correctTally++;
+            }else{
+                incorrectTally++;   
+            }
+        });
+        
 
-//to calculate answers
-
-//All correct answers are identified
-
-//when the correct answers are clicked, one point is added to the correct category.
-
-//when the incorrect answer is clicked, one point is added to the incorrect category. 
-
-//when a question is left unanswered, one point is added to the unanswered category. 
+        alert("Number of Correct Answers" + correctTally + "Number of Incorrect Answers" + incorrectTally);
+       // alert(incorrectTally);
+        
+       setTimeout(timeUp, 1000 * 12);
+       
+    });
+    
+}) 

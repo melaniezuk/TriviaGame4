@@ -48,12 +48,14 @@ table {
 }
 
 .btn {
-    border: 2px solid black;
-    backround-color: white;
-    color: black;
-    font-size: 24px;
-
+       
+    color: rgb(223, 15, 15);
     
+  
+}
+
+body {
+	background-color: red
 }
 
 .jumbotron {

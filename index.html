@@ -4,21 +4,43 @@
     <title>Totally Trivial Trivia</title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="assets/style.css">
-    <script src="jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="assets/app.js"></script>
+    
 
 </head>
+
 <body>
-<script src="app.js"></script>
 
-<!--1st screen - two sidebars with color-->
+    <script type="text/javascript">
+   
+      var timer=60;
+      var min=0;
+      var sec=0;
+  
+      function startTimer(){
+          min=parseInt(timer/60);
+          sec=parseInt(timer%60);
+  
+          if(timer<1) {
+              window.location="TimeOver.html";
+          }
+  
+          document.getElementById("time").innerHTML = "<b>Time Left: <b>"+min.toString()+":"+sec.toString();
+          timer--;
+          setTimeout (function(){
+              startTimer();
+          }, 1000);
+      }
+  
+      </script>
 
-<!--1st screen - Jumbotron with wording and a start button-->
 
 <div class="container">
     <h1>Totally Trivial Trivia</h1>
 </div>
-
+ 
 <div id="main-container" class="container">
     <section class="main-section">
       <h2><button type="button" id="start-button">Start</button></h2>
@@ -26,7 +48,7 @@
       <!--question 1-->
       <p class="question">1. The Van Gogh museum is located in what European capital city?</p>
       <ul class="answers">
-        <input type="radio" name="q1" value="a" id="q1a"><label for="q1a">Barcelona</label><br/>
+        <input type="radio" name="q1" value="a" data-answer="correct" id="q1a"><label for="q1a">Barcelona</label><br/>
         <input type="radio" name="q1" value="b" id="q1b"><label for="q1b">Paris</label><br/>
         <input type="radio" name="q1" value="c" id="q1c"><label for="q1c">Prague</label><br/>
         <input type="radio" name="q1" value="d" id="q1d"><label for="q1d">Berlin</label><br/>  
@@ -37,7 +59,7 @@
       <ul class="answers">
         <input type="radio" name="q2" value="a" id="q1a"><label for="q1a">Germany</label><br/>
         <input type="radio" name="q2" value="b" id="q1b"><label for="q1b">Peru</label><br/>
-        <input type="radio" name="q2" value="c" id="q1c"><label for="q1c">United States</label><br/>
+        <input type="radio" name="q2" value="c" data-answer="correct" id="q1c"><label for="q1c">United States</label><br/>
         <input type="radio" name="q2" value="d" id="q1d"><label for="q1d">Russia</label><br/>              
       </ul>
 
@@ -45,7 +67,7 @@
       <p class="question">3. What was the name of the actress who plays Hermione Granger in the Harry Potter series of films?</p>
       <ul class="answers">
         <input type="radio" name="q3" value="a" id="q1a"><label for="q1a">Etta Watson</label><br/>
-        <input type="radio" name="q3" value="b" id="q1b"><label for="q1b">Emma Watson</label><br/>
+        <input type="radio" name="q3" value="b" data-answer="correct" id="q1b"><label for="q1b">Emma Watson</label><br/>
         <input type="radio" name="q3" value="c" id="q1c"><label for="q1c">Elle Wadson</label><br/>
         <input type="radio" name="q3" value="d" id="q1d"><label for="q1d">Earla Whatson</label><br/>              
       </ul>
@@ -53,7 +75,7 @@
       <!--question 4-->
       <p class="question">4. Shinto is the indigenous faith to what country?</p>
       <ul class="answers">
-        <input type="radio" name="q4" value="a" id="q1a"><label for="q1a">Japan</label><br/>
+        <input type="radio" name="q4" value="a" data-answer="correct" id="q1a"><label for="q1a">Japan</label><br/>
         <input type="radio" name="q4" value="b" id="q1b"><label for="q1b">China</label><br/>
         <input type="radio" name="q4" value="c" id="q1c"><label for="q1c">Indonesia</label><br/>
         <input type="radio" name="q4" value="d" id="q1d"><label for="q1d">The Phillipines</label><br/>              
@@ -65,7 +87,7 @@
         <input type="radio" name="q5" value="a" id="q1a"><label for="q1a">Mexico City, Mexico</label><br/>
         <input type="radio" name="q5" value="b" id="q1b"><label for="q1b">New York, NY</label><br/>
         <input type="radio" name="q5" value="c" id="q1c"><label for="q1c">Beijing, China</label><br/>
-        <input type="radio" name="q5" value="d" id="q1d"><label for="q1d">Toyko, Japan</label><br/>              
+        <input type="radio" name="q5" value="d" data-answer="correct" id="q1d"><label for="q1d">Toyko, Japan</label><br/>              
       </ul>
 
       <!--question 6-->
@@ -73,17 +95,17 @@
       <ul class="answers">
         <input type="radio" name="q6" value="a" id="q1a"><label for="q1a">Joy Division</label><br/>
         <input type="radio" name="q6" value="b" id="q1b"><label for="q1b">The Rolling Stones</label><br/>
-        <input type="radio" name="q6" value="c" id="q1c"><label for="q1c">Led Zeppelin</label><br/>
+        <input type="radio" name="q6" value="c" data-answer="correct" id="q1c"><label for="q1c">Led Zeppelin</label><br/>
         <input type="radio" name="q6" value="d" id="q1d"><label for="q1d">The Cure</label><br/>              
       </ul>
 
       <!--question 7-->
       <p class="question">7. What is the largest ocean on planet Earth?</p>
       <ul class="answers">
-        <input type="radio" name="q7" value="a" id="q1a"><label for="q1a">Atlantic Ocean</label><br/>
+        <input type="radio" name="q7" value="a" data-answer="correct" id="q1a"><label for="q1a">Pacific Ocean</label><br/>
         <input type="radio" name="q7" value="b" id="q1b"><label for="q1b">Indian Ocean</label><br/>
-        <input type="radio" name="q7" value="c" id="q1c"><label for="q1c">Pacific Ocean</label><br/>
-        <input type="radio" name="q7" value="d" id="q1d"><label for="q1d">Artic Ocean</label><br/>              
+        <input type="radio" name="q7" value="c" id="q1c"><label for="q1c">Atlantic Ocean</label><br/>
+        <input type="radio" name="q7" value="d" id="q1d"><label for="q1d">Arctic Ocean</label><br/>              
       </ul>
 
       <!--question 8-->
@@ -92,20 +114,21 @@
         <input type="radio" name="q8" value="a" id="q1a"><label for="q1a">spiders</label><br/>
         <input type="radio" name="q8" value="b" id="q1b"><label for="q1b">cats</label><br/>
         <input type="radio" name="q8" value="c" id="q1c"><label for="q1c">reptiles</label><br/>
-        <input type="radio" name="q8" value="d" id="q1d"><label for="q1d">dogs</label><br/>              
+        <input type="radio" name="q8" value="d" data-answer="correct" id="q1d"><label for="q1d">dogs</label><br/>              
       </ul>
         
     </section>
 </div>
 
 <div class="container">
-    <div class="jumbotron">
-        <h1>Totally Trivial Trivia</h1>
-    <button class="btn">Start</button>
+    <!--<div class="jumbotron">
+        <h1>Totally Trivial Trivia</h1>-->
+    <button class="btn" id="submit">Submit</button>
     <div class="sidenav"></div>
     </div>
 </div>
 
+<div id="time-left"></div>
 <!--new screen that has: 
 two sidebars, jumbotron
 TTT title, time remaining, and list of 8 questions
@@ -114,5 +137,5 @@ TTT title, time remaining, and list of 8 questions
 
 <!--3rd screen that has "done!" and the calculations
 -->
-</html>
 </body>
+</html>
