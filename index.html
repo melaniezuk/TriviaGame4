@@ -10,20 +10,49 @@
     
 </head>
 <body>
-    
-  <!--connected to timer-->
-  <div id="wrapper"></div>
-  <div id="time-left"></div> 
-  
+   
+   
   <div id="main-container" class="container">
     <section class="main-section">
       <h1>Totally Trivial Trivia</h1>
+      <br>
+      <br>
+      <br>
+      <br>
+      <div id="show-number"></div>
       <h2><button type="button" id="start-button">Start</button></h2>
       <br>
-      <br>
-      <br>
+       
       
-      <!--question 1-->
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script type="text/javascript">
+      
+      var number = 60;
+      var intervalId;
+
+          $("#start-button").on("click", run);
+
+          function run() {
+              clearInterval(intervalId);
+              intervalId = setInterval(decrement, 60);
+              }
+
+              function decrement() {
+                  number--;
+                  $("#show-number").html("<h2>" + number + "</h2>");
+                  if (number === 0) {
+                      stop();
+                      alert("Time's Up!");
+                      
+                  }
+              }
+
+              function stop() {
+                  clearInterval(intervalId);
+              }
+            </script>
+    
+
       <p class="question">1. The Van Gogh museum is located in what European capital city?</p>
       <ul class="answers">
         <input type="radio" name="q1" value="a" data-answer="correct" id="q1a"><label for="q1a">Barcelona</label><br/>
@@ -32,7 +61,7 @@
         <input type="radio" name="q1" value="d" id="q1d"><label for="q1d">Berlin</label><br/>  
       </ul>
         
-      <!--question 2-->
+     
       <p class="question">2. Jackson Pollock was an influential abstract expressionist painter from what country?</p>
       <ul class="answers">
         <input type="radio" name="q2" value="a" id="q1a"><label for="q1a">Germany</label><br/>
@@ -41,7 +70,7 @@
         <input type="radio" name="q2" value="d" id="q1d"><label for="q1d">Russia</label><br/>              
       </ul>
 
-      <!--question 3-->
+     
       <p class="question">3. What was the name of the actress who plays Hermione Granger in the Harry Potter series of films?</p>
       <ul class="answers">
         <input type="radio" name="q3" value="a" id="q1a"><label for="q1a">Etta Watson</label><br/>
@@ -50,7 +79,7 @@
         <input type="radio" name="q3" value="d" id="q1d"><label for="q1d">Earla Whatson</label><br/>              
       </ul>
 
-      <!--question 4-->
+     
       <p class="question">4. Shinto is the indigenous faith to what country?</p>
       <ul class="answers">
         <input type="radio" name="q4" value="a" data-answer="correct" id="q1a"><label for="q1a">Japan</label><br/>
@@ -59,7 +88,7 @@
         <input type="radio" name="q4" value="d" id="q1d"><label for="q1d">The Phillipines</label><br/>              
       </ul>
 
-      <!--question 5-->
+     
       <p class="question">5. Which city has the largest population in the world?</p>
       <ul class="answers">
         <input type="radio" name="q5" value="a" id="q1a"><label for="q1a">Mexico City, Mexico</label><br/>
@@ -68,7 +97,7 @@
         <input type="radio" name="q5" value="d" data-answer="correct" id="q1d"><label for="q1d">Toyko, Japan</label><br/>              
       </ul>
 
-      <!--question 6-->
+     
       <p class="question">6. Houses of the Holy is the fifth studio album of which English rock band?</p>
       <ul class="answers">
         <input type="radio" name="q6" value="a" id="q1a"><label for="q1a">Joy Division</label><br/>
@@ -77,7 +106,7 @@
         <input type="radio" name="q6" value="d" id="q1d"><label for="q1d">The Cure</label><br/>              
       </ul>
 
-      <!--question 7-->
+   
       <p class="question">7. What is the largest ocean on planet Earth?</p>
       <ul class="answers">
         <input type="radio" name="q7" value="a" data-answer="correct" id="q1a"><label for="q1a">Pacific Ocean</label><br/>
@@ -86,7 +115,6 @@
         <input type="radio" name="q7" value="d" id="q1d"><label for="q1d">Arctic Ocean</label><br/>              
       </ul>
 
-      <!--question 8-->
       <p class="question">8. Cynophobia is the fear of what kind of animal?</p>
       <ul class="answers">
         <input type="radio" name="q8" value="a" id="q1a"><label for="q1a">spiders</label><br/>
@@ -102,27 +130,5 @@
     </section>
 </div>
 
-<!--Here is other timer code
-  
-  <script type="text/javascript">
-var timer=60;
-var min=0;
-var sec=0;
-
-function startTimer(){
-    min=parseInt(timer/60);
-    sec=parseInt(timer%60);
-
-    if(timer<1) {
-        window.location="TimeOver.html";
-    }
-
-    document.getElementById("time").innerHTML = "<b>Time Left: <b>"+min.toString()+":"+sec.toString();
-    timer--;
-    setTimeout (function(){
-        startTimer();
-    }, 1000);
-}
-</script>
 </body>
 </html>
