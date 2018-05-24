@@ -8,16 +8,20 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <script src="assets/app.js"></script>
     
-
 </head>
-
 <body>
-
-   <div id="main-container" class="container">
+    
+ <div id="wrapper"></div>
+  <div id="time-left"></div> 
+  
+  <div id="main-container" class="container">
     <section class="main-section">
       <h1>Totally Trivial Trivia</h1>
       <h2><button type="button" id="start-button">Start</button></h2>
-
+      <br>
+      <br>
+      <br>
+      
       <!--question 1-->
       <p class="question">1. The Van Gogh museum is located in what European capital city?</p>
       <ul class="answers">
@@ -89,13 +93,15 @@
         <input type="radio" name="q8" value="c" id="q1c"><label for="q1c">reptiles</label><br/>
         <input type="radio" name="q8" value="d" data-answer="correct" id="q1d"><label for="q1d">dogs</label><br/>              
       </ul>
+     <br>
+     <br>
      
-      <button class="btn" id="submit">Submit</button>
+     <h2><button class="button" id="submit">Submit</button></h2>
       
     </section>
 </div>
 
-<script type="text/javascript">
+<!--<script type="text/javascript">
 var timer=60;
 var min=0;
 var sec=0;

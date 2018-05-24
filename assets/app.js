@@ -1,11 +1,15 @@
+/*timer function*/
+setTimeout(sixtySeconds, 1000 * 60);
 
+    function sixtySeconds(){
+        $("#time-left").append("<h2>Time's Up!</h2>");
+        console.log("time is up");
+    }
 
 $(document).ready(function(){
     console.log("document is loaded")
- 
 
-   
-   
+        
     $("#submit").click(function(){
        
         var correctTally = 0;
@@ -83,9 +87,45 @@ $(document).ready(function(){
 
         alert("Number of Correct Answers " + correctTally + "Number of Incorrect Answers " + incorrectTally);
        // alert(incorrectTally);
-        
-       setTimeout(timeUp, 1000 * 12);
+    
        
     });
     
 }) 
+
+/* Here is my other timing code-I know the first 7 lines should be in HTML, but the rest is js
+
+<div id="show-number"></div>
+
+<br>
+
+<button id="start">Start!</button>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+var number = 60;
+var intervalId;
+
+    $("#start").on("click", run);
+
+    function run() {
+        clearInterval(intervalId);
+        intervalId = setInterval(decrement, 60);
+        }
+
+        function decrement() {
+            number--;
+            $("#show-number").html("<h2>" + number + "</h2>");
+            if (number === 0) {
+                stop();
+                alert("Time's Up!");
+                
+            }
+        }
+
+        function stop() {
+            clearInterval(intervalId);
+        }
+
+        run();

@@ -44,5 +44,33 @@ q:before, q:after {
 }
 
 #main-container {
-	background-color: aqua
+	background-image: url("black-background_00313351.jpg");
+	height: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+}
+
+.main-section {
+	color: white;
+	text-align: center;
+}
+
+.question {
+	color: aliceblue
+}
+
+.answers {
+	color: aliceblue
+}
+
+#start-button {
+	color: rgba(19, 18, 18, 0.397);
+	text-align: center;
+	
+}
+
+#submit {
+	color: rgba(19, 18, 18, 0.397);
 }
