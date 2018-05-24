@@ -9,7 +9,7 @@ $(document).ready(function(){
 
     function run() {
         clearInterval(intervalId);
-        intervalId = setInterval(decrement, 60);
+        intervalId = setInterval(decrement, 1000);
         }
 
     function decrement() {
