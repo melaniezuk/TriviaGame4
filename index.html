@@ -22,38 +22,8 @@
       <div id="show-number"></div>
       <h2><button type="button" id="start-button">Start</button></h2>
       <br>
-       
-      
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-      <script type="text/javascript">
-      
-      var number = 60;
-      var intervalId;
-
-          $("#start-button").on("click", run);
-
-          function run() {
-              clearInterval(intervalId);
-              intervalId = setInterval(decrement, 60);
-              }
-
-              function decrement() {
-                  number--;
-                  $("#show-number").html("<h2>" + number + "</h2>");
-                  if (number === 0) {
-                      stop();
-                      alert("Time's Up!");
-                      
-                  }
-              }
-
-              function stop() {
-                  clearInterval(intervalId);
-              }
-            </script>
-    
-
-      <p class="question">1. The Van Gogh museum is located in what European capital city?</p>
+          
+     <p class="question">1. The Van Gogh museum is located in what European capital city?</p>
       <ul class="answers">
         <input type="radio" name="q1" value="a" data-answer="correct" id="q1a"><label for="q1a">Barcelona</label><br/>
         <input type="radio" name="q1" value="b" id="q1b"><label for="q1b">Paris</label><br/>

@@ -1,34 +1,31 @@
-/*timer function*/
-/*setTimeout(sixtySeconds, 1000 * 60);
-
-    function sixtySeconds(){
-        $("#time-left").append("<h2>Time's Up!</h2>");
-        console.log("time is up");
-    }*/
-    
+   
 $(document).ready(function(){
     console.log("document is loaded")
+
+    var number = 60;
+      var intervalId;
+
+    $("#start-button").on("click", run);
 
     function run() {
         clearInterval(intervalId);
         intervalId = setInterval(decrement, 60);
         }
-    
-        function decrement() {
-            number--;
-            $("#show-number").html("<h2>" + number + "</h2>");
-            if (number === 0) {
-                stop();
-                alert("Time's Up!");
-            
+
+    function decrement() {
+        number--;
+        $("#show-number").html("<h2>" + number + "</h2>");
+        if (number === 0) {
+            stop();
+            alert("Time's Up!");
+                      
             }
         }
-    
-        function stop() {
-            clearInterval(intervalId);
-        }
 
-        
+    function stop() {
+        clearInterval(intervalId);
+    }
+           
     $("#submit").click(function(){
        
         var correctTally = 0;
@@ -102,9 +99,7 @@ $(document).ready(function(){
             }
         });
         
-        
-
-        alert("Number of Correct Answers " + correctTally + "Number of Incorrect Answers " + incorrectTally);
+        alert("Number of Correct Answers = " + correctTally + " " + "Number of Incorrect Answers = " + incorrectTally);
        // alert(incorrectTally);
     
        
