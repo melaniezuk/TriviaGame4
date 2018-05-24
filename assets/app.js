@@ -39,10 +39,7 @@ $(document).ready(function(){
                 incorrectTally++
             }
         });
-
-        console.log('this is the correct tally: ' + correctTally);
-        console.log('this is the unanswered tally: ' + unansweredTally);
-   
+          
         $("input[name='q2']:checked").each(function(){
             if($(this).data("answer")){
                 correctTally++;
