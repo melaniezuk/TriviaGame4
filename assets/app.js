@@ -31,6 +31,8 @@ $(document).ready(function(){
         var correctTally = 0;
         var incorrectTally = 0;
         var unansweredTally = 0;
+        var totalQuestion = 8;
+        var sum = correctTally + incorrectTally
         
         $("input[name='q1']:checked").each(function(){
             if($(this).data("answer")){
@@ -96,10 +98,10 @@ $(document).ready(function(){
             }
         });
         
-        alert("Number of Correct Answers = " + correctTally + " " + "Number of Incorrect Answers = " + incorrectTally);
+        alert("Number of Correct Answers = " + correctTally + " " + "Number of Incorrect Answers = " + incorrectTally + " " + "Number of Unanswered questions = " + unansweredTally);
        
-        function getUnanswered (correctTally, incorrectTally, unansweredTally) {
-            return value correctTally + incorrectTally;
+        function getUnanswered (correctTally, incorrectTally) {
+            return totalQuestion - sum;
         }
 
     
