@@ -17,11 +17,14 @@ $(document).ready(function(){
         $("#show-number").html("<h2>" + number + "</h2>");
         if (number === 0) {
             stop();
-            alert("Time's Up!");
-                      
+            alert("Time's Up!");                   
             }
         }
 
+    function getUnanswered (correctTally, incorrectTally) {
+            alert totalQuestion - sum;
+        }  
+        
     function stop() {
         clearInterval(intervalId);
     }
@@ -99,11 +102,7 @@ $(document).ready(function(){
         });
         
         alert("Number of Correct Answers = " + correctTally + " " + "Number of Incorrect Answers = " + incorrectTally + " " + "Number of Unanswered questions = " + unansweredTally);
-       
-        function getUnanswered (correctTally, incorrectTally) {
-            return totalQuestion - sum;
-        }
-
+              
     
        
     });
