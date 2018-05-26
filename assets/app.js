@@ -97,7 +97,11 @@ $(document).ready(function(){
         });
         
         alert("Number of Correct Answers = " + correctTally + " " + "Number of Incorrect Answers = " + incorrectTally);
-       // alert(incorrectTally);
+       
+        function getUnanswered (correctTally, incorrectTally, unansweredTally) {
+            return value correctTally + incorrectTally;
+        }
+
     
        
     });
