@@ -1,9 +1,9 @@
-
 $(document).ready(function(){
     console.log("document is loaded")
 
     var number = 60;
-      var intervalId;
+    var intervalId;
+    var totalQuestion = 8;
 
     $("#start-button").on("click", run);
 
@@ -21,9 +21,10 @@ $(document).ready(function(){
             }
         }
 
-    function getUnanswered (correctTally, incorrectTally) {
-            alert (totalQuestion - sum);
-        }
+    function getUnanswered(correctTally, incorrectTally) {
+        var answeredQuestions = correctTally + incorrectTally;
+        return (totalQuestion - answeredQuestions);
+    }
 
     function stop() {
         clearInterval(intervalId);
@@ -34,7 +35,6 @@ $(document).ready(function(){
         var correctTally = 0;
         var incorrectTally = 0;
 
-        var totalQuestion = 8;
 
         function determiner(scope){
             if(scope.data("answer")){
@@ -77,9 +77,9 @@ $(document).ready(function(){
             determiner($(this));
         });
 
-        var answeredQuestions = correctTally + incorrectTally;
-        var unansweredTally = totalQuestion - answeredQuestions;
-        alert("Number of Correct Answers = " + correctTally + " " + "Number of Incorrect Answers = " + incorrectTally + " " + "Number of Unanswered questions = " + unansweredTally);
+        alert("Number of Correct Answers = " + correctTally + " "
+              + "Number of Incorrect Answers = " + incorrectTally + " "
+              + "Number of Unanswered questions = " + getUnanswered(correctTally, incorrectTally));
 
 
 
