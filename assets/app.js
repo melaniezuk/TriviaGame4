@@ -33,9 +33,8 @@ $(document).ready(function(){
 
         var correctTally = 0;
         var incorrectTally = 0;
-        var getUnanswered = 0;
+
         var totalQuestion = 8;
-        var sum = correctTally + incorrectTally
 
         function determiner(scope){
             if(scope.data("answer")){
@@ -78,6 +77,8 @@ $(document).ready(function(){
             determiner($(this));
         });
 
+        var sum = correctTally + incorrectTally;
+        var getUnanswered = 8 - sum;
         alert("Number of Correct Answers = " + correctTally + " " + "Number of Incorrect Answers = " + incorrectTally + " " + "Number of Unanswered questions = " + getUnanswered);
 
 
