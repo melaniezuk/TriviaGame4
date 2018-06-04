@@ -77,9 +77,9 @@ $(document).ready(function(){
             determiner($(this));
         });
 
-        var sum = correctTally + incorrectTally;
-        var getUnanswered = 8 - sum;
-        alert("Number of Correct Answers = " + correctTally + " " + "Number of Incorrect Answers = " + incorrectTally + " " + "Number of Unanswered questions = " + getUnanswered);
+        var answeredQuestions = correctTally + incorrectTally;
+        var unansweredTally = totalQuestion - answeredQuestions;
+        alert("Number of Correct Answers = " + correctTally + " " + "Number of Incorrect Answers = " + incorrectTally + " " + "Number of Unanswered questions = " + unansweredTally);
 
 
 
