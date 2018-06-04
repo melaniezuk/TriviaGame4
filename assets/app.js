@@ -10,8 +10,9 @@ $(document).ready(function(){
     function run() {
         clearInterval(intervalId);
         intervalId = setInterval(decrement, 1000);
+        debugger;
+        $("#submit").show();
         }
-
     function decrement() {
         number--;
         $("#show-number").html("<h2>" + number + "</h2>");
@@ -20,6 +21,19 @@ $(document).ready(function(){
             alert("Time's Up!");
             }
         }
+
+/*<INPUT TYPE="BUTTON" VALUE="Edit" ONCLICK="btnEdit()" class="styled-button-2">
+    <INPUT TYPE="BUTTON" VALUE="Save" ONCLICK="btnSave()" class="styled-button-2" style="visibility:hidden;" id="save">
+
+    <SCRIPT LANGUAGE="JavaScript">
+        function btnEdit()
+        {
+            
+
+        }    
+     </script>*/
+
+
 
     function getUnanswered(correctTally, incorrectTally) {
         var answeredQuestions = correctTally + incorrectTally;

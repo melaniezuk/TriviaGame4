@@ -73,4 +73,5 @@ q:before, q:after {
 
 #submit {
 	color: rgba(19, 18, 18, 0.397);
+	display: none;
 }
